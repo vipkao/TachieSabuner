@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>差分閲覧ツール</title>
+<meta charset="UTF-8">
+<script src="vender.bundle.js"></script>
+<style>
+button,.caption,select,input{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+button.selected{
+    background-color: rgba(255, 128, 128, 0.5);
+}
+.image{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#controller{
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.0;
+    overflow-y: scroll;
+    height: 100%;
+}
+#controller:hover{
+    opacity: 1.0;
+}
+#images{
+}
+</style>
+</head>
+<body>
+<div id="images"></div>
+<div id="controller">
+<div id="tooltip"></div>
+<div id="state_string"></div>
+<div id="state_list"></div>
+<div id="tab_pane"></div>
+<div id="downloader"></div>
+</div>
+<script src="settings.js"></script>
+<script src="app.bundle.js"></script>
+</body>
+</html>
