@@ -6,8 +6,9 @@
 
 ノベルゲーム等でよく見る、画像の差分表示をブラウザ上で確認するツールです。
 動作確認用に、設定ファイル(settings.js)と差分画像(images/)が同梱されています。
+https://vipkao.github.io/TachieSabuner/ でも動作確認ができます。
 
-docs/index.htmlをブラウザで表示して下さい(Chromeで動作確認)。
+開発時はdocs/index.htmlをブラウザで表示して下さい(Chromeで動作確認)。
 キャラクターが表示されていれば成功です。
 
 ## 機能(Features)
