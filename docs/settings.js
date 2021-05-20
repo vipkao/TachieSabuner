@@ -136,7 +136,7 @@ var SETTINGS =
                 type:"single",
                 suffix:"png",
                 left:326, top:288, 
-                default:"01",
+                default:"00",
                 images:[
                     {id:"00"}, {id:"01"}, {id:"02"},
                 ],
