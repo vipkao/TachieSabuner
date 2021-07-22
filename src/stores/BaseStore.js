@@ -89,7 +89,7 @@ const BaseStore = function(source_data, base_dispatcher){
     }
 
     this.getAlias = function(){
-        return _alias;
+        return _alias == null ? "" : _alias;
     }
 
     //現在の選択状態文字列を取得する。

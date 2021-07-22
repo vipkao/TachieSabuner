@@ -31,7 +31,7 @@ class LayerImageFactory extends React.Component {
         var layer_alias = this.props.base_store.getAlias();
         return {
             base_state: base_state,
-            layer_alias: layer_alias == null ? "" : layer_alias,
+            layer_alias: layer_alias,
             base_info: this.props.base_store.getInfo(base_state),
             layer_states: this.props.layer_store.getStateArray(),
             scale: this.props.appearance_store.getScale(),

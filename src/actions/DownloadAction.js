@@ -23,7 +23,8 @@ const DownloadAction = function(
     }
     function _canvasBuilder(type, callback){
         var base_state = base_store.getState();
-        var base = base_store.getInfo(base_state); 
+        var base_alias = base_store.getAlias();
+        var base = base_store.getInfo(base_state);
         var layers = layer_store.getStateArray();
 
         var url = pathBuilder.build(
@@ -37,7 +38,7 @@ const DownloadAction = function(
         };
         var layerFiles = layers.map((layer, index)=>{
             var url = pathBuilder.build(
-                path, base_state, layer.state, layer.info.suffix
+                path, base_alias == "" ? base_state : base_alias, layer.state, layer.info.suffix
             );    
             return {
                 index: index + 1,
