@@ -43,7 +43,7 @@ var SETTINGS =
                 left:326, top:288, 
                 default:"",
                 images:[
-                    {id:"00"}, {id:"01"}, {id:"02"}, {id:"03"}, {id:"04"}, {id:"05"}, {id:"06"},
+                    {id:"00"}, {id:"01"}, {id:"02"}, {id:"03"}, {id:"04"}, {id:"05"}, {id:"06"}, {id:"07"},
                 ],
             },
             {
@@ -112,6 +112,7 @@ var SETTINGS =
         width:1300,
         height:3200,
         suffix:"png",
+        alias:"Aa",
         download:{
             face:{
                 left:326, top:288, 
@@ -127,7 +128,7 @@ var SETTINGS =
                 left:326, top:288, 
                 default:"",
                 images:[
-                    {id:"00"}, {id:"01"}, {id:"02"}, {id:"03"}, {id:"04"}, {id:"05"}, {id:"06"},
+                    {id:"00"}, {id:"01"}, {id:"02"}, {id:"03"}, {id:"04"}, {id:"05"}, {id:"06"}, {id:"07"},
                 ],
             },
             {
@@ -196,6 +197,7 @@ var SETTINGS =
         width:1300,
         height:3200,
         suffix:"png",
+        alias:"Aa",
         download:{
             face:{
                 left:326, top:288, 
@@ -211,7 +213,7 @@ var SETTINGS =
                 left:326, top:288, 
                 default:"",
                 images:[
-                    {id:"00"}, {id:"01"}, {id:"02"}, {id:"03"}, {id:"04"}, {id:"05"}, {id:"06"},
+                    {id:"00"}, {id:"01"}, {id:"02"}, {id:"03"}, {id:"04"}, {id:"05"}, {id:"06"}, {id:"07"},
                 ],
             },
             {
@@ -280,6 +282,7 @@ var SETTINGS =
         width:1300,
         height:3200,
         suffix:"png",
+        alias:"Aa",
         download:{
             face:{
                 left:326, top:288, 
@@ -295,7 +298,7 @@ var SETTINGS =
                 left:326, top:288, 
                 default:"",
                 images:[
-                    {id:"00"}, {id:"01"}, {id:"02"}, {id:"03"}, {id:"04"}, {id:"05"}, {id:"06"},
+                    {id:"00"}, {id:"01"}, {id:"02"}, {id:"03"}, {id:"04"}, {id:"05"}, {id:"06"}, {id:"07"},
                 ],
             },
             {

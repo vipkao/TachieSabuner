@@ -28,8 +28,10 @@ class LayerImageFactory extends React.Component {
     }
     _buildState(){
         var base_state = this.props.base_store.getState();
+        var layer_alias = this.props.base_store.getAlias();
         return {
             base_state: base_state,
+            layer_alias: layer_alias == null ? "" : layer_alias,
             base_info: this.props.base_store.getInfo(base_state),
             layer_states: this.props.layer_store.getStateArray(),
             scale: this.props.appearance_store.getScale(),
@@ -50,10 +52,11 @@ class LayerImageFactory extends React.Component {
             class_name="image"
         />;
         var i = 0;
+        var layer_base = this.state.layer_alias == "" ? this.state.base_state : this.state.layer_alias;
         var layer_images = this.state.layer_states.map((state)=>{
             return (<LayerImage
                 path={this.props.path}
-                base={this.state.base_state}
+                base={layer_base}
                 layer={state.state}
                 suffix={state.info.suffix}
                 builder={this.props.path_builder}

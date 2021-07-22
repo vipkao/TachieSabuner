@@ -39,6 +39,7 @@ describe('components/LayerImageFactoryテスト', () => {
                 width:'100',
             }; };
             this.getState    = function(){ return 'test2'; };
+            this.getAlias    = function(){ return 'test2a'; };
             this.addListener = function(){};
             this.removeListener = function(){};
         }();
@@ -86,7 +87,7 @@ describe('components/LayerImageFactoryテスト', () => {
             />
             <LayerImage
                 path={'test4'}
-                base={'test2'}
+                base={'test2a'}
                 layer={'test3'}
                 suffix={'test5'}
                 builder={{test_builder:'test_builder'}}
@@ -136,11 +137,13 @@ describe('components/LayerImageFactoryテスト', () => {
         const path_builder_build = sinon.spy(path_builder, 'build');
         const base_store_getInfo = sinon.stub(base_store, 'getInfo');
         const base_store_getState = sinon.stub(base_store, 'getState');
+        const base_store_getAlias = sinon.stub(base_store, 'getAlias');
         const appearance_store_getScale = sinon.stub(appearance_store, 'getScale');
         const layer_store_getStateArray = sinon.stub(layer_store, 'getStateArray');
         //stubにしたため、getBasesの戻りがundefinedになっており、render前に行う必要がある。
         base_store_getInfo.returns({suffix:'xxx', });
         base_store_getState.returns('yyy');
+        base_store_getAlias.returns('yyy2');
         appearance_store_getScale.returns('9.9');
         layer_store_getStateArray.returns([{state: 'zzz', info:{top: 111, left: 222, suffix: 'test5', }}]);
 
@@ -161,7 +164,7 @@ describe('components/LayerImageFactoryテスト', () => {
         );
         assert.deepStrictEqual(
             path_builder_build.getCall(1).args,
-            ["test4", "yyy", "zzz", "test5"]
+            ["test4", "yyy2", "zzz", "test5"]
         );
 
         //update
@@ -173,6 +176,7 @@ describe('components/LayerImageFactoryテスト', () => {
         assert.strictEqual(target.state.scale, '9.9');
 
         base_store_getState.returns('yyyy');
+        base_store_getAlias.returns('');
         appearance_store_getScale.returns('8.8');
 
         //update

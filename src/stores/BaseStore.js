@@ -18,6 +18,7 @@ const BaseStore = function(source_data, base_dispatcher){
 
     function _stateClear(){
         _state = _this.getDefaultState();
+        _alias = _getBaseById(_source_data, _state).alias;
     }
 
     function _onBaseEvent(payload){
@@ -27,6 +28,7 @@ const BaseStore = function(source_data, base_dispatcher){
             }
             _stateClear();
             _state = payload.id;
+            _alias = _getBaseById(_source_data, _state).alias;
             _raiseEvent();
         }
     }
@@ -43,6 +45,7 @@ const BaseStore = function(source_data, base_dispatcher){
     //選択状態文字列を読み取り選択状態に反映させる。
     this.readStateString = function(state_string){
         _state = state_string;
+        _alias = _getBaseById(_source_data, _state).alias;
         if(_state === ''){
             _stateClear();
         }
@@ -85,6 +88,10 @@ const BaseStore = function(source_data, base_dispatcher){
         return _state;
     }
 
+    this.getAlias = function(){
+        return _alias;
+    }
+
     //現在の選択状態文字列を取得する。
     this.getStateString = function(){
         return _state;
@@ -97,6 +104,7 @@ const BaseStore = function(source_data, base_dispatcher){
 
     var _source_data = _converter(source_data);
     var _state = "";
+    var _alias = "";
 
     base_dispatcher.addListener(_onBaseEvent);
     _stateClear();
